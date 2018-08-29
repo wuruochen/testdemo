@@ -1,0 +1,65 @@
+[{
+	"id":1,
+	"text":"2015",
+	"children":[{
+		"id":11,
+		"text":"통계",
+		"state":"closed",
+		"children":[{
+			"id":111,
+			"text":"신한"
+		},{
+			"id":112,
+			"text":"국민"
+		},{
+			"id":113,
+			"text":"우리"
+		}]
+	},{
+		"id":12,
+		"text":"하계",
+		"children":[{
+			"id":121,
+			"text":"신한"
+		},{
+			"id":122,
+			"text":"국민",
+			"attributes":{
+				"p1":"Custom Attribute1",
+				"p2":"Custom Attribute2"
+			}
+		}]
+	}]
+	},{
+	"id":2,
+	"text":"2016",
+	"children":[{
+		"id":21,
+		"text":"통계",
+		"state":"closed",
+		"children":[{
+			"id":211,
+			"text":"신한"
+		},{
+			"id":212,
+			"text":"국민"
+		},{
+			"id":213,
+			"text":"우리"
+		}]
+	},{
+		"id":22,
+		"text":"하계",
+		"children":[{
+			"id":221,
+			"text":"신한"
+		},{
+			"id":222,
+			"text":"국민",
+			"attributes":{
+				"p1":"Custom Attribute1",
+				"p2":"Custom Attribute2"
+			}
+		}]
+	}]
+}]
