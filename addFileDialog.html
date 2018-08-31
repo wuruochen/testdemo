@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Test</title>
+    <link rel="stylesheet" type="text/css" href="https://www.jeasyui.com/easyui/themes/default/easyui.css">
+    <link rel="stylesheet" type="text/css" href="https://www.jeasyui.com/easyui/themes/icon.css">
+    <link rel="stylesheet" type="text/css" href="https://www.jeasyui.com/easyui/demo/demo.css">
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
+    <script type="text/javascript" src="https://www.jeasyui.com/easyui/jquery.easyui.min.js"></script>
+    <script type="text/javascript" src="https://www.jeasyui.com/easyui/jquery.edatagrid.js"></script>
+</head>
+<body class="easyui-layout">
+    <div data-options="region:'north',title:'첨부파일'," style="height:600px;">
+         <table id="dg"></table>
+    </div>
+    <div data-options="region:'east'," style="width:20%;background:#eee;">
+        <div style="margin-top:20px;">
+            <button type="button" style="width:100px;height:60px">다운로드</button>
+        </div>
+    </div>
+    <div data-options="region:'west'," style="width:60%;background:#eee;">
+        <div style="margin-top:20px;width:100%">
+            <input id="fb" type="text" style="width:500px" label="파일이름:" labelPosition="lefts">
+        </div>
+    <div style="margin-top:20px;width:100%;">
+            <input id="tb" type="text" style="width:500px" label="파일설명:" labelPosition="lefts">
+        </div>
+    </div>
+    <div data-options="region:'center'," style="padding:5px;width:20%;background:#eee;">
+        <div style="margin-top:20px">
+            <button type="button" style="width:100px;height:60px">업로드</button>
+        </div>
+    </div>
+
+    <script type="text/javascript">
+    $(function(){
+    $('#dg').datagrid({
+    url:'https://raw.githubusercontent.com/wuruochen/testdemo/master/data.json',
+    method:'get',
+    rownumbers:"true",
+    fitColumns:true, 
+    singleSelect:"false",
+    fit:"false",
+    pagination:false,
+    nowrap:"false",
+    toolbar: [{
+        iconCls: 'icon-add',
+        text: '추가',
+        handler: function newUser() {
+            $('#dlg1').dialog('open').dialog('center').dialog('setTitle', 'New');
+            $('#fm1').form('clear');
+            url = 'save_user.php';}
+    }],
+    onDblClickRow:function editRow(){
+        var row = $('#dg').datagrid('getSelected');
+            if (row) {
+                $('#dlg').dialog('open').dialog('center').dialog('setTitle', 'Edit');
+                $('#fm').form('load', row);
+                url = 'update_user.php?id=' + row.id;
+            }     
+           
+        },
+    columns:[[
+        {field:'이름',title:'이름',width:110},
+        {field:'유형',title:'유형',width:110},
+        {field:'크기',title:'크기',width:110},
+        {field:'저장유형',title:'저장유형',width:110},
+        {field:'업로드날짜',title:'업로드날짜',width:110},
+        {field:'업로드상태',title:'업로드상태',width:110},
+        {field:'인증상태',title:'인증상태',width:110},
+        {field:'인증날짜',title:'인증날짜',width:110},
+        {field:'입고날짜',title:'입고날짜',width:110},
+        {field:'입고상태',title:'입고상태',width:110},
+        {field:'저장경로',title:'저장경로',width:110},
+        {field:'업로드유저',title:'업로드유저',width:110}
+    ]]
+});  
+
+ });
+$('#fb').filebox({
+    buttonText: '불러오기',
+    buttonAlign: 'right'
+})
+
+$('#tb').textbox({
+    
+})
+    </script>
+</body>
+</html>
