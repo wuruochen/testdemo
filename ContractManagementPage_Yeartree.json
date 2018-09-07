@@ -1,0 +1,6 @@
+[[
+        {field:'id',title:'ID',width:110},
+        {field:'제작년도',title:'제작년도',width:110},
+        {field:'시즌',title:'시즌',width:110},
+        {field:'거래처명',title:'거래처명',width:110}
+    ]]
