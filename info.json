@@ -1,15 +1,11 @@
-[{
+{
     "code": 200, 
-    "msg": "user1", 
-    "data": {
+    "msg": "success", 
+    "data": [{
         "username": "wuruochen", 
         "password": "123456"
-    },
-},{
-	"code": 300, 
-    "msg": "user2", 
-    "data": {
-        "username": "wuruochen", 
-        "password": "123456"
-    }
-}]
+    },{
+    	"username": "root", 
+        "password": "root2017"
+    }]
+}
