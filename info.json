@@ -1,15 +1,12 @@
 {
     "code": 200, 
     "msg": "success", 
-    "data": {
+    "data": [{
         "username": "wuruochen", 
         "password": "123456"
-    }
-},{
-    "code": 300, 
-    "msg": "success", 
-    "data": {
+    },{
+
         "username": "root", 
         "password": "root2017"
-    }
+    }]
 }
